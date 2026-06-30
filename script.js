@@ -279,36 +279,9 @@ counters.forEach(c => counterObserver.observe(c));
 
 
 /*=========================================================
-SPOTLIGHT FOLLOW CURSOR
-=========================================================*/
-
-const spotlight = document.createElement("div");
-
-spotlight.style.position = "fixed";
-spotlight.style.width = "600px";
-spotlight.style.height = "600px";
-spotlight.style.borderRadius = "50%";
-spotlight.style.pointerEvents = "none";
-spotlight.style.zIndex = "-1";
-spotlight.style.filter = "blur(140px)";
-spotlight.style.background = "rgba(111,124,255,.10)";
-spotlight.style.transform = "translate(-50%, -50%)";
-
-document.body.appendChild(spotlight);
-
-window.addEventListener("mousemove", (e) => {
-
-    spotlight.style.left = e.clientX + "px";
-    spotlight.style.top = e.clientY + "px";
-
-});
-
-
-/*=========================================================
 FADE HERO PARALLAX
+(reuses the same `hero` and `spotlight` declared above)
 =========================================================*/
-
-const hero = document.querySelector(".hero");
 
 window.addEventListener("scroll", () => {
 
